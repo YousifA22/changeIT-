@@ -32,6 +32,11 @@ other_headings = [
     'personal details', 'profile', 'additional information'
 ]
 
+
+@app.route('/')
+def home():
+    return "Welcome to the Resume Analyzer API"
+
 def extract_pdf_text(pdf_path):
     return extract_text(pdf_path)
 
@@ -140,11 +145,9 @@ def process_resume():
             os.remove(temp_path)
 
 
-
-@app.route('/')
-def home():
-    return "Welcome to the Resume Analyzer API"
-
 if __name__ == '__main__':
     port = int(os.getenv("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=True)
+
+
+
