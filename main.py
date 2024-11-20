@@ -35,7 +35,7 @@ other_headings = [
 
 @app.route('/')
 def home():
-    print('33')
+   
     return "Welcome to the Resume Analyzer API"
 
 def extract_pdf_text(pdf_path):
@@ -99,7 +99,7 @@ def get_chatgpt_response(prompt):
 
 @app.route('/process_resumee', methods=['POST'])
 def process_resume():
-    print('1')
+    
     
     job_desc = request.form.get('job_desc')
     resume_file = request.files.get('resume')
@@ -114,7 +114,7 @@ def process_resume():
     
 
     try:
-        print('1')
+       
         # Extract experience section from the resume
         text = extract_pdf_text(temp_path)
         experience_section = extract_experience_section(text)
@@ -125,12 +125,12 @@ def process_resume():
 
         # Create the prompt for ChatGPT
         prompt = create_prompt(experience_section, job_desc)
-        print('2')
+       
         
 
         # Get the response from ChatGPT
         response = get_chatgpt_response(prompt)
-        print('3')
+        
         
 
         if response:
