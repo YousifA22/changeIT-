@@ -35,6 +35,7 @@ other_headings = [
 
 @app.route('/')
 def home():
+    print('33')
     return "Welcome to the Resume Analyzer API"
 
 def extract_pdf_text(pdf_path):
